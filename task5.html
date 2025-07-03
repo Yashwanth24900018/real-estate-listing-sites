@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>15 Property Listings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    .view-toggle {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .view-toggle button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .listing-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .property-card {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .property-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .listing-table table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+    }
+
+    .listing-table th,
+    .listing-table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media screen and (max-width: 600px) {
+      .listing-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="view-toggle">
+    <button onclick="toggleView('grid')">Grid View</button>
+    <button onclick="toggleView('table')">Table View</button>
+  </div>
+
+  <!-- Grid View -->
+  <div class="listing-container" id="gridView">
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Villa in Chennai">
+      <h3>Villa in Chennai</h3>
+      <p>₹75 Lakhs • Chennai</p>
+    </div>
+
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?auto=format&fit=crop&w=800&q=80" alt="Flat in Bangalore">
+      <h3>Flat in Bangalore</h3>
+      <p>₹45 Lakhs • Bangalore</p>
+    </div>
+
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?auto=format&fit=crop&w=800&q=80" alt="Villa in Hyderabad">
+      <h3>Villa in Hyderabad</h3>
+      <p>₹90 Lakhs • Hyderabad</p>
+    </div>
+
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1600585153961-329668b24705?auto=format&fit=crop&w=800&q=80" alt="Flat in Mumbai">
+      <h3>Flat in Mumbai</h3>
+      <p>₹1.2 Cr • Mumbai</p>
+    </div>
+
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9a6?auto=format&fit=crop&w=800&q=80" alt="Villa in Coimbatore">
+      <h3>Villa in Coimbatore</h3>
+      <p>₹70 Lakhs • Coimbatore</p>
+    </div>
+
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80" alt="Flat in Chennai">
+      <h3>Flat in Chennai</h3>
+      <p>₹60 Lakhs • Chennai</p>
+    </div>
+
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80" alt="Villa in Bangalore">
+      <h3>Villa in Bangalore</h3>
+      <p>₹85 Lakhs • Bangalore</p>
+    </div>
+
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80" alt="Flat in Hyderabad">
+      <h3>Flat in Hyderabad</h3>
+      <p>₹50 Lakhs • Hyderabad</p>
+    </div>
+
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1605276374104-deb52a9a5249?auto=format&fit=crop&w=800&q=80" alt="Villa in Delhi">
+      <h3>Villa in Delhi</h3>
+      <p>₹1.1 Cr • Delhi</p>
+    </div>
+
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1590769322830-7462f7f76595?auto=format&fit=crop&w=800&q=80" alt="Flat in Pune">
+      <h3>Flat in Pune</h3>
+      <p>₹55 Lakhs • Pune</p>
+    </div>
+
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1600585153961-329668b24705?auto=format&fit=crop&w=800&q=80" alt="Villa in Kochi">
+      <h3>Villa in Kochi</h3>
+      <p>₹78 Lakhs • Kochi</p>
+    </div>
+
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1605276374104-deb52a9a5249?auto=format&fit=crop&w=800&q=80" alt="Flat in Ahmedabad">
+      <h3>Flat in Ahmedabad</h3>
+      <p>₹48 Lakhs • Ahmedabad</p>
+    </div>
+
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80" alt="Villa in Jaipur">
+      <h3>Villa in Jaipur</h3>
+      <p>₹80 Lakhs • Jaipur</p>
+    </div>
+
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1600573473518-969d2f38d6a4?auto=format&fit=crop&w=800&q=80" alt="Flat in Noida">
+      <h3>Flat in Noida</h3>
+      <p>₹58 Lakhs • Noida</p>
+    </div>
+
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1570051008600-b34baa49e751?auto=format&fit=crop&w=800&q=80" alt="Villa in Mysore">
+      <h3>Villa in Mysore</h3>
+      <p>₹73 Lakhs • Mysore</p>
+    </div>
+  </div>
+
+  <!-- Table View -->
+  <div class="listing-table hidden" id="tableView">
+    <table>
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Price</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Villa in Chennai</td><td>₹75 Lakhs</td><td>Chennai</td></tr>
+        <tr><td>Flat in Bangalore</td><td>₹45 Lakhs</td><td>Bangalore</td></tr>
+        <tr><td>Villa in Hyderabad</td><td>₹90 Lakhs</td><td>Hyderabad</td></tr>
+        <tr><td>Flat in Mumbai</td><td>₹1.2 Cr</td><td>Mumbai</td></tr>
+        <tr><td>Villa in Coimbatore</td><td>₹70 Lakhs</td><td>Coimbatore</td></tr>
+        <tr><td>Flat in Chennai</td><td>₹60 Lakhs</td><td>Chennai</td></tr>
+        <tr><td>Villa in Bangalore</td><td>₹85 Lakhs</td><td>Bangalore</td></tr>
+        <tr><td>Flat in Hyderabad</td><td>₹50 Lakhs</td><td>Hyderabad</td></tr>
+        <tr><td>Villa in Delhi</td><td>₹1.1 Cr</td><td>Delhi</td></tr>
+        <tr><td>Flat in Pune</td><td>₹55 Lakhs</td><td>Pune</td></tr>
+        <tr><td>Villa in Kochi</td><td>₹78 Lakhs</td><td>Kochi</td></tr>
+        <tr><td>Flat in Ahmedabad</td><td>₹48 Lakhs</td><td>Ahmedabad</td></tr>
+        <tr><td>Villa in Jaipur</td><td>₹80 Lakhs</td><td>Jaipur</td></tr>
+        <tr><td>Flat in Noida</td><td>₹58 Lakhs</td><td>Noida</td></tr>
+        <tr><td>Villa in Mysore</td><td>₹73 Lakhs</td><td>Mysore</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function toggleView(view) {
+      const grid = document.getElementById("gridView");
+      const table = document.getElementById("tableView");
+      if (view === "grid") {
+        grid.classList.remove("hidden");
+        table.classList.add("hidden");
+      } else {
+        grid.classList.add("hidden");
+        table.classList.remove("hidden");
+      }
+    }
+  </script>
+
+</body>
+</html>
