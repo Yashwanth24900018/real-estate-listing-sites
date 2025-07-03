@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Costa Verde Villa - Listing</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .features ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .features li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .location {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .location a {
+      color: #007bff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .location a:hover {
+      text-decoration: underline;
+    }
+
+    .form-section {
+      margin-top: 40px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 10px;
+    }
+
+    input, textarea, button {
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    #modal img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      form {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Costa Verde Villa</h1>
+
+    <div class="gallery" id="gallery">
+      <img src="Balconi.png" alt="Balcony" onclick="openModal(this.src)">
+      <img src="Kitchen.png" alt="Kitchen" onclick="openModal(this.src)">
+      <img src="Bed Room.png" alt="Bedroom" onclick="openModal(this.src)">
+      <img src="Bathroom.png" alt="Bathroom" onclick="openModal(this.src)">
+      <img src="Ocean View.png" alt="Ocean View" onclick="openModal(this.src)">
+      <img src="Swimming Pool.png" alt="Pool" onclick="openModal(this.src)">
+    </div>
+
+    <div class="features">
+      <h2>Property Features</h2>
+      <ul>
+        <li><strong>Location:</strong> ECR, Chennai</li>
+        <li><strong>Price:</strong> ₹1,200,000</li>
+        <li><strong>Size:</strong> 3,500 sqft</li>
+        <li><strong>Bedrooms:</strong> 2</li>
+        <li><strong>Bathrooms:</strong> 1</li>
+        <li><strong>Amenities:</strong> Swimming Pool, Smart Home, Garage, CCTV, Security, Ocean View</li>
+      </ul>
+    </div>
+
+    <div class="location">
+      <h2>View Location</h2>
+      <a href="https://maps.app.goo.gl/KujNsRshCtHZT86D6" target="_blank">Open in Google Maps</a>
+    </div>
+
+    <hr style="margin: 40px 0; border: none; border-top: 2px solid #ccc;">
+
+    <div class="form-section">
+      <h2>Contact Agent</h2>
+      <form onsubmit="handleSubmit(event)">
+        <input type="text" name="name" placeholder="Your Full Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="phone" placeholder="Your Phone Number" required>
+        <input type="text" name="address" placeholder="Your Address" required>
+        <input type="text" name="pincode" placeholder="Your Pincode" required>
+        <textarea name="message" rows="4" placeholder="Your message..." required></textarea>
+        <button type="submit">Send Message to Agent</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img id="modalImg" src="" alt="Enlarged Image">
+  </div>
+
+  <script>
+    function openModal(src) {
+      document.getElementById("modalImg").src = src;
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      alert("Your message has been sent to the agent!");
+      e.target.reset();
+    }
+  </script>
+
+</body>
+</html>
