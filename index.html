@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Colton Properties - Home</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 20px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .navbar .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .navbar nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 40px;
+      background: linear-gradient(to right, #f2f2f2, #e6f0ff);
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      max-width: 500px;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      margin: 0 0 10px;
+    }
+
+    .hero-text h2 {
+      color: #0078d7;
+      margin: 10px 0;
+    }
+
+    .hero-text p {
+      margin-bottom: 20px;
+    }
+
+    .hero-text button {
+      padding: 10px 20px;
+      background-color: #0078d7;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .hero-image img {
+      max-width: 450px;
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    /* Search Bar */
+    .search-section {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #fff;
+    }
+
+    .search-section input {
+      width: 300px;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .search-section button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #0078d7;
+      color: white;
+      border: none;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    /* Featured Listings */
+    .featured-listings {
+      padding: 50px 40px;
+      background-color: #f4f4f4;
+    }
+
+    .featured-listings h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 15px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text {
+        max-width: 100%;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar nav a {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Costa Verde Villa</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="task2.html">Lists</a>
+      <a href="task3.html">Details</a>
+      <a href="task4.html">Contact</a>
+      <a href="task5.html">Grid view</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Luxury Villa<br>Minutes<br>From the Bay</h1>
+      <h2>$3,500,000</h2>
+      <p>Discover your dream home in this exquisite 4BHK luxury villa, just minutes from the serene coastal bay.
+This property features modern architecture, spacious interiors, and panoramic views. Enjoy premium amenities like a private garden, rooftop terrace, home automation, and a designer kitchen.
+Perfectly located near top schools, shopping centers, and medical facilities — ideal for families looking for both comfort and convenience.</p>
+      <button>Read More</button>
+    </div>
+    <div class="hero-image">
+      <img src="WhatsApp Image 2025-07-03 at 12.18.31_b38d6ac0.jpg" alt="Luxury Villa">
+    </div>
+  </section>
+
+  <!-- Search Bar -->
+  <section class="search-section">
+    <input type="text" placeholder="Search by location or property type..." />
+    <button>Search</button>
+  </section>
+
+  <!-- Featured Listings -->
+  <section class="featured-listings">
+    <h2>Featured Listings</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="v2.jpeg" alt="House 1" />
+        <h3>Modern Villa in ECR</h3>
+        <p>₹2.2 Cr · 4 BHK · Chennai</p>
+      </div>
+      <div class="card">
+        <img src="499991332.jpg" alt="House 2" />
+        <h3>Beachside Cottage</h3>
+        <p>₹1.1 Cr · 2 BHK · Pondicherry</p>
+      </div>
+      <div class="card">
+        <img src="Project-Photo-1-Rema-Skyview-Apartments-Bangalore-5009102_864_1152_310_462.jpg" alt="House 3" />
+        <h3>Skyview Apartments</h3>
+        <p>₹85 Lakhs · 3 BHK · Coimbatore</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
