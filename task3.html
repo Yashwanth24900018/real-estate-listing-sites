@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Property Location with Images</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .features {
+      margin-top: 30px;
+    }
+
+    .features ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .features li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .location-link {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .location-link a {
+      color: #007bff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .location-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* Popup Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      margin: 5% auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 600px) {
+      .modal-content {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Costa Verde Villa</h1>
+
+    <div class="gallery">
+      <img src="Balconi.png" alt="Balcony View" onclick="openModal(this)">
+      <img src="Kitchen.png" alt="Kitchen" onclick="openModal(this)">
+      <img src="Bed Room.png" alt="Bedroom" onclick="openModal(this)">
+      <img src="Bathroom.png" alt="Bathroom" onclick="openModal(this)">
+      <img src="Ocean View.png" alt="Ocean View" onclick="openModal(this)">
+      <img src="Swimming Pool.png" alt="Swimming Pool" onclick="openModal(this)">
+    </div>
+
+    <div class="features">
+      <h2>Property Features</h2>
+      <ul>
+        <li><strong>Location:</strong> ECR, Chennai</li>
+        <li><strong>Price:</strong> ₹1,200,000</li>
+        <li><strong>Size:</strong> 3,500 sqft</li>
+        <li><strong>Bedrooms:</strong> 2</li>
+        <li><strong>Bathrooms:</strong> 1</li>
+        <li><strong>Kitchen:</strong> 1</li>
+        <li><strong>Amenities:</strong> Swimming Pool, 24hrs CCTV Surveillance, Security, Smart Home, Garage, Ocean View</li>
+      </ul>
+    </div>
+
+    <div class="location-link">
+      <h2>View Property Location</h2>
+      <a href="https://maps.app.goo.gl/KujNsRshCtHZT86D6?g_st=aw" target="_blank">
+        Open in Google Maps
+      </a>
+    </div>
+  </div>
+
+  <!-- Image Popup Modal -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script>
+    function openModal(img) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+
+    // Optional: Close modal on ESC key
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape") {
+        closeModal();
+      }
+    });
+  </script>
+
+</body>
+</html>
